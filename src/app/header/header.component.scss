@@ -1,0 +1,31 @@
+header {
+    border-bottom: 2px solid #ccc;
+}
+
+a {
+    text-decoration: none;
+    color: #af1313;
+}
+
+.logo:hover {
+    color: #fff;
+    background-color: #af1313;
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    padding: 1rem;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+}
