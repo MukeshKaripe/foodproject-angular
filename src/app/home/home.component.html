@@ -1,3 +1,4 @@
+<app-search></app-search>
 <ul>
 
     <li *ngFor="let food of foods">
@@ -11,8 +12,28 @@
 
 ♥
         </span>
-        <div class="card flex justify-content-center">
-            <!-- <p-rating [(ngModel)]="value" [cancel]="false"></p-rating> -->
+        <div class="card flex justify-content-center border-0">
+            <p-rating [value]="food.star" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" [cancel]="false" size="24px"
+          ></p-rating>
+       
+            <!-- Previous code -->
+<!-- <p-rating [(ngModel)]="selectedRating"></p-rating> -->
+<div class="product-item-footer">
+    <div class="origins">
+        <span *ngFor="let origin of food.origins">
+{{origin}}
+        </span>
+    </div>
+    <div class="cook-time">
+        <span>
+            <i class="pi pi-clock"></i>
+        </span>
+        {{food.cookTime}}
+    </div>
+    <div class="price">
+        {{food.price | currency}}
+    </div>
+</div>
         </div>
       </div>
       
