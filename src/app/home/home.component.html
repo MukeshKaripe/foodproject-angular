@@ -1,8 +1,9 @@
 <app-search></app-search>
+<app-tags></app-tags>
 <ul>
 
     <li *ngFor="let food of foods">
-        <a class="image-info">
+        <a routerLink="/food/{{food.id}}"  class="image-info" >
             <img src="{{food.imageUrl}}" alt="food">
       <div class="content">
         <div class="name">
@@ -13,8 +14,10 @@
 ♥
         </span>
         <div class="card flex justify-content-center border-0">
-            <p-rating [value]="food.star" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" [cancel]="false" size="24px"
-          ></p-rating>
+            <!-- <p-rating value="food.star" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" [cancel]="false" size="24px"
+          ></p-rating> -->
+      
+    <p-rating [(ngModel)]="food.star" [cancel]="false"></p-rating>
        
             <!-- Previous code -->
 <!-- <p-rating [(ngModel)]="selectedRating"></p-rating> -->
