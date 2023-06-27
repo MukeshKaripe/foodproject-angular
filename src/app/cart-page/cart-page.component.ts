@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Cart } from '../shared/models/cart';
 import { CartService } from '../services/cart.service';
-import { ChartItem } from 'chart.js';
 import { CardItem } from '../shared/models/carditem';
+import { FoodService } from '../services/food/food.service';
 
 
 @Component({
@@ -11,9 +11,19 @@ import { CardItem } from '../shared/models/carditem';
   styleUrls: ['./cart-page.component.scss']
 })
 export class CartPageComponent implements OnInit {
+[x: string]: any;
   // food: Foods[] = [];
   cart!:Cart;
-  constructor(private cartservice:CartService){
+  constructor(private cartservice:CartService ,private foodservice:FoodService )
+  // after design this is removed
+  {
+    // let foods = foodservice.getAll();
+    // cartservice.addToCart(foods[1]);
+    // cartservice.addToCart(foods[3]);
+
+    // cartservice.addToCart(foods[5]);
+
+
     this.setcart();
   }
   ngOnInit(): void {
@@ -36,3 +46,4 @@ export class CartPageComponent implements OnInit {
     this.setcart();
     }
 }
+
