@@ -9,7 +9,7 @@ import { Foods } from 'src/app/shared/models/food';
 })
 
 export class FoodService {
-
+// services used to store data(internal storage) , function reuse
   constructor() { }
 
   getfoodid(id:number):Foods{
@@ -45,6 +45,8 @@ getAllTag():Tag[]{
   ];
 
 }
+
+
   getAll(): Foods[] {
     return [
       {

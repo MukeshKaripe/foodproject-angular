@@ -1,0 +1,52 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    margin: 0 auto;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+button{
+    border: none;
+    background-color: rgb(243, 175, 135);
+    color: rgb(245, 113, 52);
+    border-radius: 6px;
+    padding: 5px 20px;
+    width: 20%;
+}
+input{
+    padding: 5px 20px;
+border-radius: 4px;
+outline: none;
+border: 1px solid;
+}
+select{
+    padding: 5px 20px;
+
+}
+button:hover{
+    background-color:  rgb(245, 113, 52);
+    color:white ;
+}
+
+.radio-btn{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.ng-invalid.ng-touched{
+border: red 1px solid;
+
+}
+.login-btn{
+    background-color: rgb(203, 238, 171);
+    color: rgb(14, 231, 25);
+}
+.login-btn:hover{
+    background-color: green;
+
+}

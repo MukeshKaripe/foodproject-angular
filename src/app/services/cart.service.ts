@@ -9,6 +9,9 @@ import { CardItem } from '../shared/models/carditem';
 export class CartService {
 private cart:Cart = new Cart();
   constructor() { }
+
+
+
   addToCart(food:Foods):void
 {
   let cartitem = this.cart.items.find(item => item.food.id === food.id)
@@ -22,12 +25,14 @@ return;
 removefromcart(foodId:number):void{
   this.cart.items = this.cart.items.filter(item => item.food.id!= foodId)
 }
-changeQuantity(quantity:number,foodId:number){
+changeQuantity(foodId:number,quantity:number){
 
 let cartitem = this.cart.items.find(item => item.food.id === foodId);
-if(!cartitem)return;
-cartitem.quantity = quantity;
+console.log(cartitem);
 
+if(!cartitem)return;
+
+cartitem.quantity = quantity;
 
 }
 getcart():Cart{

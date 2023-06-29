@@ -1,0 +1,37 @@
+<div class="form">
+    <h2 class="title text-center mt-3">Registration Form</h2>
+<form class="border-0" [formGroup]="reactiveForm"  (ngSubmit)="onSubmit()" >
+
+<label for="">First Name</label>
+<input type="text" placeholder="Your name" formControlName="firstname">
+<label for="">Email</label>
+<input type="email" placeholder="Your email" formControlName="email" >
+<div *ngIf="!reactiveForm.get('email').valid && reactiveForm.get('email').touched" class="msg text-danger">
+Not a Valid Email
+</div>
+<label for="">Country</label>
+<select id="country"  formControlName="country">
+    <option value="India">India</option>
+    <option value="">USA</option>
+    <option value="">Canada</option>
+    <option value="">UK</option>
+
+</select>
+<label for="gender">Gender:</label>
+<div class="radio-btn">
+    <input type="radio" id="male" value="male" formControlName="gender">
+<label for="">male</label>
+<input type="radio" id="female" value="'female" formControlName="gender">
+<label for="">female</label>
+<input type="radio" id="other" value="'other" formControlName="gender">
+<label for="">other</label>
+</div>
+<label for="">Password</label>
+<input type="Password" placeholder="Password" formControlName="password" >
+<div class="d-flex  mt-3" style="gap: 10px;">
+    <button  >Submit</button>
+<button  routerLink="/login" class="login-btn" >Go to Login</button>
+</div>
+
+</form>
+</div>

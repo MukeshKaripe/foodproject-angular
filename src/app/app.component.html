@@ -1,3 +1,29 @@
+
+<!-- <app-signup></app-signup> -->
 <app-header></app-header>
 <router-outlet></router-outlet>
+
+
+
+
 <!-- home component -->
+<!-- <button (click)="getData()">get</button> -->
+<div *ngIf="data">
+    <table>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>price</th>
+        </tr>
+        <tr *ngFor="let product of data" >
+            <td> {{product.id}} </td>
+            <td> {{product.title}} </td>
+            <td> {{product.price}} </td>
+
+
+        </tr>
+       
+    </table>
+
+</div>
+

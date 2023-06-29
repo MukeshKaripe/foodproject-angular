@@ -1,0 +1,37 @@
+<!-- <div class="logn-form">
+    <div class="form-group">
+        <label for="username">Usename</label>
+        <input type="text" name="uname" [(ngModel)]="username"  class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <label for="password">password</label>
+        <input type="password" name="pwords" class="form-controls"  [(ngModel)]="password" class="form-control"  />
+    </div>
+    <div style="color: red;" class="error">
+        {{errormsg}}
+    </div>
+   <div class="btn btn-success" (click)="login()" >login</div>
+
+</div> -->
+
+
+
+
+<div class="form">
+    <h2 class="title text-center mt-3">Login Form</h2>
+<form class="border-0" [formGroup]="loginForm"   >
+
+
+<label for="">Email:</label>
+<input type="email" placeholder="Your email" formControlName="email" >
+
+
+<label for="">Password:</label>
+<input type="Password" placeholder="Password" formControlName="password" >
+<div class="btn-class">
+    <button routerLink="/login" (click)="login()" class="login-btn" >Login</button>
+    <button class="reset-btn" (click)="reset()" >Reset</button>
+</div>
+</form>
+</div>

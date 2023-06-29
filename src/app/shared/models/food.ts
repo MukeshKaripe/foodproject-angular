@@ -1,3 +1,8 @@
+
+
+
+// interface class
+
 export class Foods{
     id!:number;
     price!:number;

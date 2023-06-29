@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute , Router } from '@angular/router';
 @Component({
   selector: 'app-search',
@@ -6,7 +6,10 @@ import { ActivatedRoute , Router } from '@angular/router';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
-searchItem:string="";
+
+
+
+  searchItem:string="";
 constructor(private route:ActivatedRoute , private router:Router )
 {
 
@@ -23,6 +26,15 @@ if(this.searchItem ){
   this.router.navigateByUrl('/search/' + this.searchItem);
 
 }
+}
+
+// direct search
+@Output()
+searchTextchanged:EventEmitter<string> = new EventEmitter<string>();
+
+onsearchText(){
+  this.searchTextchanged.emit(this.searchItem);
+  
 }
 
 }

@@ -28,4 +28,15 @@ a {
 ul {
   padding: 0px;
   margin: 0px;
+  display: flex;
+  gap: 20px;
+}
+.logochild{
+    padding: 1rem;
+    font-size: 18px;
+
+}
+.logochild:hover{
+background-color: #222;
+color: #fff;
 }

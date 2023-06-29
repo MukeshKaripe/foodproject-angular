@@ -1,47 +1,46 @@
-<app-search></app-search>
+<app-search (searchTextchanged)="onsearchTextenter($event)"></app-search>
 <app-tags></app-tags>
 <ul>
 
     <li *ngFor="let food of foods">
-        <a routerLink="/food/{{food.id}}"  class="image-info" >
+        <a routerLink="/food/{{food.id}}" class="image-info" *ngIf=" searchText === '' || food.name.toLowerCase().includes(searchText) " >
             <img src="{{food.imageUrl}}" alt="food">
-      <div class="content">
-        <div class="name">
-            {{food.name}}
-        </div>
-        <span class="favorite {{food.favorite?'':'not'}} ">
+            <div class="content">
+                <div class="name">
+                    {{food.name}}
+                </div>
+                <span class="favorite {{food.favorite?'':'not'}} ">
 
-♥
-        </span>
-        <div class="card flex justify-content-center border-0">
-            <!-- <p-rating value="food.star" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" [cancel]="false" size="24px"
+                    ♥
+                </span>
+                <div class="card flex justify-content-center border-0">
+                    <!-- <p-rating value="food.star" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" [cancel]="false" size="24px"
           ></p-rating> -->
-      
-    <p-rating [(ngModel)]="food.star" [cancel]="false"></p-rating>
-       
-            <!-- Previous code -->
-<!-- <p-rating [(ngModel)]="selectedRating"></p-rating> -->
-<div class="product-item-footer">
-    <div class="origins">
-        <span *ngFor="let origin of food.origins">
-{{origin}}
-        </span>
-    </div>
-    <div class="cook-time">
-        <span>
-            <i class="pi pi-clock"></i>
-        </span>
-        {{food.cookTime}}
-    </div>
-    <div class="price">
-        {{food.price | currency}}
-    </div>
-</div>
-        </div>
-      </div>
-      
-      
+
+                    <p-rating [(ngModel)]="food.star" [cancel]="false"></p-rating>
+
+                    <!-- Previous code -->
+                    <!-- <p-rating [(ngModel)]="selectedRating"></p-rating> -->
+                    <div class="product-item-footer">
+                        <div class="origins">
+                            <span *ngFor="let origin of food.origins">
+                                {{origin}}
+                            </span>
+                        </div>
+                        <div class="cook-time">
+                            <span>
+                                <i class="pi pi-clock"></i>
+                            </span>
+                            {{food.cookTime}}
+                        </div>
+                        <div class="price">
+                            {{food.price | currency}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </a>
     </li>
 </ul>
-

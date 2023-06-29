@@ -8,11 +8,17 @@ import { RatingModule } from 'primeng/rating';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { SearchComponent } from './search/search.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TagsComponent } from './tags/tags.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { FoodpageComponent } from './foodpage/foodpage.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { HttpClientModule } from "@angular/common/http";
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +29,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     CartPageComponent,
     FoodpageComponent,
     NotfoundComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +38,10 @@ import { NotfoundComponent } from './notfound/notfound.component';
     RatingModule,
     RadioButtonModule,
     FormsModule,
+    HttpClientModule ,
+    ReactiveFormsModule,
+    
+
     
     
     
@@ -41,4 +53,6 @@ import { NotfoundComponent } from './notfound/notfound.component';
     CUSTOM_ELEMENTS_SCHEMA
   ]
 })
-export class AppModule { }
+export class AppModule { 
+ 
+}

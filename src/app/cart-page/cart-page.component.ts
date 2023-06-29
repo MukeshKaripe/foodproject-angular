@@ -1,3 +1,6 @@
+
+
+
 import { Component, OnInit } from '@angular/core';
 import { Cart } from '../shared/models/cart';
 import { CartService } from '../services/cart.service';
@@ -42,6 +45,8 @@ export class CartPageComponent implements OnInit {
   }
   changeQuantity(cartitem:CardItem,quantityInString:string){
     const quantity = parseInt(quantityInString);
+    console.log(quantity );
+    
     this.cartservice.changeQuantity(cartitem.food.id,quantity);
     this.setcart();
     }

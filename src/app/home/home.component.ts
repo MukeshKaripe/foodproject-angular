@@ -18,6 +18,8 @@ constructor(private fs:FoodService , private router:ActivatedRoute ){
 
 }
 ngOnInit():void{
+  // subscribe is used to access given data
+  // params property represents the route in angular
 this.router.params.subscribe(params =>{
 if(params['searchItem']){
   this.foods = this.fs.getAll().filter(food => food.name.toLowerCase().includes(params['searchItem'].toLowerCase()) )
@@ -28,4 +30,16 @@ this.foods=this.fs.getAllFoodByTag(params['tag']);
 })
 this.foods=this.fs.getAll();
 }
+
+// direct  search
+ searchText:string='';
+
+ onsearchTextenter(searchvalue:string){
+  this.searchText= searchvalue;
+  // console.log( this.searchText);
+  
+  
+ }
+
+
 }
