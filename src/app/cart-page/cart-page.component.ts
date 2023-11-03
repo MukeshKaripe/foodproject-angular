@@ -51,4 +51,3 @@ export class CartPageComponent implements OnInit {
     this.setcart();
     }
 }
-

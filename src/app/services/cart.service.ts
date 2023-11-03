@@ -8,6 +8,7 @@ import { CardItem } from '../shared/models/carditem';
 })
 export class CartService {
 private cart:Cart = new Cart();
+// creating a blueprint
   constructor() { }
 
 
